@@ -67,3 +67,6 @@ Use the following policy (allows publish/subscribe for your device):
     }
   ]
 }
+
+3. Test MQTT test_client
+<MACADDRESS>/telemetry
