@@ -1,4 +1,4 @@
-#add device shadow
+#add device shadow   and even add a webhook(optional)
 ThingsName change to device macaddress.
 1. Create an IoT Thing
 
@@ -70,4 +70,24 @@ Use the following policy (allows publish/subscribe for your device):
 
 3. Test MQTT test_client
     client.publish("$aws/things/" + THINGNAME + "/shadow/update", jsonBuffer); because the THINGNAME is MACADDRESS so, fill upp with <MACADDRESS>/telemetry att test_client.
+4. Add webhook
+   the data from esp32 can even sends to a specified webside through the created webhook.
+    
+   Create the IoT Rule
 
+   Go to AWS IoT Core → Message routing → Rules
+
+   Click Create rule
+
+   Rule SQL:
+
+   SELECT * FROM '<MAC>/telemetry'
+
+  👉 Replace <MAC> with your device MAC (no colons).
+    OR use wildcard:
+
+    SELECT * FROM '+/telemetry'
+
+   Go to AWS IoT Core--message routing--destination
+    create https endpoint
+After that, login in the webside check wether the data is showed or not.
