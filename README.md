@@ -69,4 +69,5 @@ Use the following policy (allows publish/subscribe for your device):
 }
 
 3. Test MQTT test_client
-<MACADDRESS>/telemetry
+    client.publish("$aws/things/" + THINGNAME + "/shadow/update", jsonBuffer); because the THINGNAME is MACADDRESS so, fill upp with <MACADDRESS>/telemetry att test_client.
+
