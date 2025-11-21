@@ -1,2 +1,2 @@
-#add webhook basis on the verion1
+#add device shadow
 esp32 sends data to aws every  certification
